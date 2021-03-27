@@ -23,7 +23,7 @@ PadClipLauncher.init = function() {
 
 PadClipLauncher.handleMIDI = function(data1, data2) {
   pressed = data2 > 0;
-  var trackAdd = 0;
+  var trackAdd = (activeClipBank - ClipBanks.Bank_A) * 4;
   if (pressed == true) {
     pressed = data2 > 0;
     var track = ((data1 - 36) % 4) + trackAdd;
