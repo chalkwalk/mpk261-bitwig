@@ -136,59 +136,32 @@ var bitwigColor = {
 
 
 function bitwigColorToPadColor(rgbInput) {
-  if (areArraysEqual(rgbInput, bitwigColor['Dark_Grey']) == true) {
-    return padColors['Grey'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Grey']) == true) {
-    return padColors['Grey'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['White']) == true) {
-    return padColors['Grey'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Purple_Grey']) == true) {
-    return padColors['Purple'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Dark_Brown']) == true) {
-    return padColors['Orange'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Brown']) == true) {
-    return padColors['Orange'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Purple_Blue']) == true) {
-    return padColors['Light_Blue'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Purple_Blue']) == true) {
-    return padColors['Pastel_Purple'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Purple']) == true) {
-    return padColors['Purple'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Pink']) == true) {
-    return padColors['Pink'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Red']) == true) {
-    return padColors['Red'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Orange']) == true) {
-    return padColors['Orange'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Gold']) == true) {
-    return padColors['Orange'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Lime']) == true) {
-    return padColors['Green_Blue'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Green']) == true) {
-    return padColors['Pastel_Green'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Aqua']) == true) {
-    return padColors['Aqua'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Sky_Blue']) == true) {
-    return padColors['Aqua'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Purple']) == true) {
-    return padColors['Pastel_Purple'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Pink']) == true) {
-    return padColors['Hot_Pink'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Pink_Orange']) == true) {
-    return padColors['Pastel_Pink'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Orange']) == true) {
-    return padColors['Orange'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Gold']) == true) {
-    return padColors['Orange'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Lime']) == true) {
-    return padColors['Pastel_Green'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Green']) == true) {
-    return padColors['Pastel_Green'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Aqua']) == true) {
-    return padColors['Aqua'];
-  } else if (areArraysEqual(rgbInput, bitwigColor['Light_Sky_Blue']) == true) {
-    return padColors['Light_Blue'];
-  }
+  if (areArraysEqual(rgbInput, bitwigColor['Dark_Grey']) == true) return padColors['Grey'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Grey']) == true) return padColors['Grey'];
+  else if (areArraysEqual(rgbInput, bitwigColor['White']) == true) return padColors['Grey'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Purple_Grey']) == true) return padColors['Purple'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Dark_Brown']) == true) return padColors['Orange'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Brown']) == true) return padColors['Orange'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Purple_Blue']) == true) return padColors['Light_Blue'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Purple_Blue']) == true) return padColors['Pastel_Purple'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Purple']) == true) return padColors['Purple'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Pink']) == true) return padColors['Pink'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Red']) == true) return padColors['Red'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Orange']) == true) return padColors['Orange'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Gold']) == true) return padColors['Orange'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Lime']) == true) return padColors['Green_Blue'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Green']) == true) return padColors['Pastel_Green'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Aqua']) == true) return padColors['Aqua'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Sky_Blue']) == true) return padColors['Aqua'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Purple']) == true) return padColors['Pastel_Purple'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Pink']) == true) return padColors['Hot_Pink'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Pink_Orange']) == true) return padColors['Pastel_Pink'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Orange']) == true) return padColors['Orange'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Gold']) == true) return padColors['Orange'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Lime']) == true) return padColors['Pastel_Green'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Green']) == true) return padColors['Pastel_Green'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Aqua']) == true) return padColors['Aqua'];
+  else if (areArraysEqual(rgbInput, bitwigColor['Light_Sky_Blue']) == true) return padColors['Light_Blue'];
 }
 
 
@@ -292,11 +265,8 @@ function sceneLaunchObs() {
 
 function armObsFunction(track) {
   return function(value) {
-    if (value == true) {
-      onOff = 127;
-    } else {
-      onOff = 0;
-    }
+    if (value == true) onOff = 127;
+    else onOff = 0;
     armed[track] = onOff;
     updateButtonLeds();
   }
@@ -305,11 +275,8 @@ function armObsFunction(track) {
 
 function muteObsFunction(track) {
   return function(value) {
-    if (value == true) {
-      onOff = 127;
-    } else {
-      onOff = 0;
-    }
+    if (value == true) onOff = 127;
+    else onOff = 0;
     muted[track] = onOff;
     updateButtonLeds();
   }
@@ -318,11 +285,8 @@ function muteObsFunction(track) {
 
 function soloObsFunction(track) {
   return function(value) {
-    if (value == true) {
-      onOff = 127;
-    } else {
-      onOff = 0;
-    }
+    if (value == true) onOff = 127;
+    else onOff = 0;
     soloed[track] = onOff;
     updateButtonLeds();
   }
@@ -337,28 +301,16 @@ function onMidi(status, data1, data2) {
 
   /* transport */
   if (status == 0xb0) {
-    if (data1 == 115 && pressed == true) {
-      transport.rewind();
-    }
-    if (data1 == 116 && pressed == true) {
-      transport.fastForward();
-    }
-    if (data1 == 117 && pressed == true) {
-      transport.stop();
-    }
+    if (data1 == 115 && pressed == true) transport.rewind();
+    if (data1 == 116 && pressed == true) transport.fastForward();
+    if (data1 == 117 && pressed == true) transport.stop();
     if (data1 == 118 && pressed == true) {
-      if (shifted) {
-        transport.toggleClick();
-      } else {
-        transport.play();
-      }
+      if (shifted) transport.toggleClick();
+      else transport.play();
     }
     if (data1 == 119 && pressed == true) {
-      if (shifted) {
-        transport.toggleLauncherOverdub();
-      } else {
-        transport.record();
-      }
+      if (shifted) transport.toggleLauncherOverdub();
+      else transport.record();
     }
   }
 
@@ -370,8 +322,7 @@ function onMidi(status, data1, data2) {
       if (pressed == true) {
         if (data1 - S1 == 0) {
           setActivePadMode(PadInstrument);
-        }
-        if (data1 - S1 == 1) {
+        } else if (data1 - S1 == 1) {
           activeClipBank = ClipBanks.Bank_A;
           setActivePadMode(PadClipLauncher);
         } else if (data1 - S1 == 2) {
@@ -443,11 +394,8 @@ function ControlsMidi(status, data1, data2) {
 /* Light a pad, Ride a horse. */
 function lightPad(color, padNumber, padState) {
   var padIdent;
-  if (padState == "On") {
-    padIdent = minimumPadOn + padNumber;
-  } else {
-    padIdent = minimumPadOff + padNumber;
-  }
+  if (padState == "On") padIdent = minimumPadOn + padNumber;
+  else padIdent = minimumPadOff + padNumber;
   var MidiOut = "F0 47 00 " + uint7ToHex(PRODUCT_ID) + " 31 00 04 01 " + uint7ToHex(getMSB(padIdent)) + " " + uint7ToHex(getLSB(padIdent)) + " " + uint7ToHex(color) + " F7";
   host.getMidiOutPort(1).sendSysex(MidiOut);
 }
@@ -455,9 +403,7 @@ function lightPad(color, padNumber, padState) {
 
 function lightAllPads(color, padState) {
   var padIdent = minimumPadOn;
-  if (padState == "Off") {
-    padIdent = minimumPadOff;
-  }
+  if (padState == "Off") padIdent = minimumPadOff;
   var MidiOut = "F0 47 00 " + uint7ToHex(PRODUCT_ID) + " 31 00 43 40 " + uint7ToHex(getMSB(padIdent)) + " " + uint7ToHex(getLSB(padIdent));
   for (var x = 0; x < 64; x++) {
     MidiOut += " " + uint7ToHex(color)
@@ -471,21 +417,14 @@ function PadMode() {}
 
 
 PadMode.prototype.handleNavKeys = function(data1) {
-  if (data1 == NAVKeys.LEFT) {
-    shifted ? cursorTrack.selectPrevious() : trackBank.scrollTracksUp();
-  } else if (data1 == NAVKeys.RIGHT) {
-    shifted ? cursorTrack.selectNext() : trackBank.scrollTracksDown();
-  } else if (data1 == NAVKeys.UP) {
-    trackBank.scrollScenesUp();
-
-  } else if (data1 == NAVKeys.DOWN) {
-    trackBank.scrollScenesDown();
-  }
+  if (data1 == NAVKeys.LEFT) shifted ? cursorTrack.selectPrevious() : trackBank.scrollTracksUp();
+  else if (data1 == NAVKeys.RIGHT) shifted ? cursorTrack.selectNext() : trackBank.scrollTracksDown();
+  else if (data1 == NAVKeys.UP) trackBank.scrollScenesUp();
+  else if (data1 == NAVKeys.DOWN) trackBank.scrollScenesDown();
 }
 
 
-PadMode.prototype.handleMIDI = function(data1, data2) {
-}
+PadMode.prototype.handleMIDI = function(data1, data2) {}
 
 
 PadMode.prototype.init = function() {}

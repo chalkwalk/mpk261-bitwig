@@ -10,13 +10,9 @@ load("MPK2_PadSceneLaunch.js");
 host.defineController("Akai", "MPK261", "1.0.4", "27400730-da60-11e3-9c1a-0800200c9a66");
 host.defineMidiPorts(2, 2);
 
-if (host.platformIsWindows()) {
-  host.addDeviceNameBasedDiscoveryPair(["MPK261", "MIDIIN4 (MPK261)"], ["MPK261", "MIDIOUT4 (MPK261)"]);
-} else if (host.platformIsMac()) {
-  host.addDeviceNameBasedDiscoveryPair(["MPK261 Port A", "MPK261 Remote"], ["MPK261 Port A", "MPK261 Remote"]);
-} else {
-  host.addDeviceNameBasedDiscoveryPair(["MPK261 MIDI 1", "MPK261 MIDI 4"], ["MPK261 MIDI 1", "MPK261 MIDI 4"]);
-}
+if (host.platformIsWindows()) host.addDeviceNameBasedDiscoveryPair(["MPK261", "MIDIIN4 (MPK261)"], ["MPK261", "MIDIOUT4 (MPK261)"]);
+else if (host.platformIsMac()) host.addDeviceNameBasedDiscoveryPair(["MPK261 Port A", "MPK261 Remote"], ["MPK261 Port A", "MPK261 Remote"]);
+else host.addDeviceNameBasedDiscoveryPair(["MPK261 MIDI 1", "MPK261 MIDI 4"], ["MPK261 MIDI 1", "MPK261 MIDI 4"]);
 
 /* MPK261 MIDI Product ID */
 const PRODUCT_ID = 0x25;

@@ -8,11 +8,8 @@ var ClipBanks = {
 
 PadClipLauncher.init = function() {
   if (displayHelpText) {
-    if (activeClipBank == ClipBanks.Bank_A) {
-      host.showPopupNotification("Pads: Clip Launch: 1 - 4");
-    } else {
-      host.showPopupNotification("Pads: Clip Launch: 5 - 8");
-    }
+    if (activeClipBank == ClipBanks.Bank_A) host.showPopupNotification("Pads: Clip Launch: 1 - 4");
+    else host.showPopupNotification("Pads: Clip Launch: 5 - 8");
   }
   PadNotes.setShouldConsumeEvents(false);
   PadNotes.setKeyTranslationTable(PadMIDITable.OFF);
@@ -58,9 +55,7 @@ PadClipLauncher.getPadFromTrackSlot = function(track, slot, bank) {
   var Pad;
   var newslot;
 
-  if (bank == ClipBanks.Bank_B) {
-    track = track - 4;
-  }
+  if (bank == ClipBanks.Bank_B) track -= 4;
 
   if (slot < 4) {
     newslot = Math.abs(slot - 3);
@@ -83,39 +78,31 @@ PadClipLauncher.updateClipLED = function(track, slot) {
   if (track < 4 && activeClipBank == ClipBanks.Bank_A) {
     Pad = this.getPadFromTrackSlot(track, slot, activeClipBank);
     var clipData = clipSlots[track][slot];
-    if (clipData.recording == true) {
-      lightPad(padColors['Red'], Pad, "Off");
-    } else if (clipData.playing == true) {
-      lightPad(padColors['Green'], Pad, "Off");
-    } else {
-      lightPad(clipData.color, Pad, "Off");
-    }
+    if (clipData.recording == true) lightPad(padColors['Red'], Pad, "Off");
+    else if (clipData.playing == true) lightPad(padColors['Green'], Pad, "Off");
+    else lightPad(clipData.color, Pad, "Off");
   } else if (track > 3 && activeClipBank == ClipBanks.Bank_B) {
     Pad = this.getPadFromTrackSlot(track, slot, activeClipBank);
     var clipData = clipSlots[track][slot];
-    if (clipData.recording == true) {
-      lightPad(padColors['Red'], Pad, "Off");
-    } else if (clipData.playing == true) {
-      lightPad(padColors['Green'], Pad, "Off");
-    } else {
-      lightPad(clipData.color, Pad, "Off");
-    }
+    if (clipData.recording == true) lightPad(padColors['Red'], Pad, "Off");
+    else if (clipData.playing == true) lightPad(padColors['Green'], Pad, "Off");
+    else lightPad(clipData.color, Pad, "Off");
   }
 }
 
 
 PadClipLauncher.getClipForMidiNote = function(note) {
-  note = note - 36;
+  note -= 36;
   if (note < 16) {
     return Math.abs(Math.floor(note / 4) - 3);
   } else if (note < 32) {
-    note = note - 16;
+    note -= 16;
     return Math.abs(Math.floor(note / 4) - 3) + 4;
   } else if (note < 48) {
-    note = note - 32;
+    note -= 32;
     return Math.abs(Math.floor(note / 4) - 3) + 8;
   } else if (note < 64) {
-    note = note - 48;
+    note -= 48;
     return Math.abs(Math.floor(note / 4) - 3) + 12;
   }
 }
