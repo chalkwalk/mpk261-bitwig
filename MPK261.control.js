@@ -45,7 +45,7 @@ function init() {
 
   transport = host.createTransportSection();
   application = host.createApplicationSection();
-  trackBank = host.createMainTrackBankSection(8, 2, 16);
+  trackBank = host.createMainTrackBankSection(16, 2, 16);
   sceneLaunchTrackBank = host.createTrackBank(4, 0, 64);
 
   cursorTrack = host.createCursorTrack(2, 0);

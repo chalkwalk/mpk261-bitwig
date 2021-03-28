@@ -51,15 +51,15 @@ Device Macros
 
 <kbd>S1</kbd> Instrument/Drum Rack Modes
 
-<kbd>S2</kbd> Clip Launch: 1-4
+<kbd>S2</kbd> Scene Launch 1-64
 
-<kbd>S3</kbd> Clip Launch: 5-8
+<kbd>S3</kbd> Clip Launch: 1-4
 
-<kbd>S4</kbd> Scene Launch 1-64
+<kbd>S4</kbd> Clip Launch: 5-8
 
-<kbd>S5</kbd> N/F
+<kbd>S5</kbd> Clip Launch: 9-12
 
-<kbd>S6</kbd> N/F
+<kbd>S6</kbd> Clip Launch: 13-16
 
 <kbd>S7</kbd> N/F
 

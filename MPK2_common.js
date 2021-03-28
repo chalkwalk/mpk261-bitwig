@@ -56,10 +56,10 @@ var activeClipBank;
 var displayHelpText = true;
 
 /* arrays to keep track of track states */
-var armed = initArray(0, 8);
-var muted = initArray(0, 8);
-var soloed = initArray(0, 8);
-var clipSlots = create2DArray(8, 16);
+var armed = initArray(0, 16);
+var muted = initArray(0, 16);
+var soloed = initArray(0, 16);
+var clipSlots = create2DArray(16, 16);
 
 var drumKeys = initArray(false, 128);
 var transtable = initArray(-1, 128);
@@ -225,7 +225,7 @@ function cursorTrackpitchObs() {
 
 
 function initClipArray() {
-  for (var x = 0; x < 8; x++) {
+  for (var x = 0; x < 16; x++) {
     for (var y = 0; y < 16; y++) {
       newClipData = new padSceneData();
       newClipData.playing = false;
@@ -323,13 +323,19 @@ function onMidi(status, data1, data2) {
         if (data1 - S1 == 0) {
           setActivePadMode(PadInstrument);
         } else if (data1 - S1 == 1) {
+          setActivePadMode(PadSceneLauncher);
+        } else if (data1 - S1 == 2) {
           activeClipBank = ClipBanks.Bank_A;
           setActivePadMode(PadClipLauncher);
-        } else if (data1 - S1 == 2) {
+        } else if (data1 - S1 == 3) {
           activeClipBank = ClipBanks.Bank_B;
           setActivePadMode(PadClipLauncher);
-        } else if (data1 - S1 == 3) {
-          setActivePadMode(PadSceneLauncher);
+        } else if (data1 - S1 == 4) {
+          activeClipBank = ClipBanks.Bank_C;
+          setActivePadMode(PadClipLauncher);
+        } else if (data1 - S1 == 5) {
+          activeClipBank = ClipBanks.Bank_D;
+          setActivePadMode(PadClipLauncher);
         } else if (data1 - S1 == 7) {
           displayHelpText = !displayHelpText;
           displayHelpText ? host.showPopupNotification("Popup Notifications On") : host.showPopupNotification("Popup Notifications Off");
@@ -343,7 +349,6 @@ function onMidi(status, data1, data2) {
     } else {
       ControlsMidi(status, data1, data2);
     }
-
   } else if (status == bankBStatus) {
     ControlsMidi(status, data1, data2);
   } else if (status == bankCStatus) {
