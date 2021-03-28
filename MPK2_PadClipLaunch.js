@@ -24,11 +24,12 @@ PadClipLauncher.init = function() {
 PadClipLauncher.handleMIDI = function(data1, data2) {
   pressed = data2 > 0;
   var trackAdd = (activeClipBank - ClipBanks.Bank_A) * 4;
-  if (pressed == true) {
+  if (pressed) {
     pressed = data2 > 0;
     var track = ((data1 - 36) % 4) + trackAdd;
     var clip = PadClipLauncher.getClipForMidiNote(data1);
-    trackBank.getTrack(track).getClipLauncherSlots().launch(clip);
+    if (shifted) trackBank.getTrack(track).getClipLauncherSlots().stop();
+    else trackBank.getTrack(track).getClipLauncherSlots().launch(clip);
   }
 }
 

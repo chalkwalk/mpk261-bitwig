@@ -20,7 +20,8 @@ Control Setup
 
 **Clip Launch**
 
-- Emulates APC behavior for Bitwig's Clip Launch on the hardware pads
+- Mostly emulates APC behavior for Bitwig's Clip Launch on the hardware pad
+- Hold <kbd>SHIFT</kbd> when clicking a pad to stop the clip when it's playing
 
 **Scene Launch**
 
