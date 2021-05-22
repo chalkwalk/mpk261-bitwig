@@ -301,6 +301,7 @@ function onMidi(status, data1, data2) {
 
   /* transport */
   if (status == 0xb0) {
+    if (data1 == 114 && pressed == true) transport.toggleLoop();
     if (data1 == 115 && pressed == true) transport.rewind();
     if (data1 == 116 && pressed == true) transport.fastForward();
     if (data1 == 117 && pressed == true) transport.stop();
