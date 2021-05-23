@@ -6,6 +6,8 @@ This script is based on the official script by Akai [available here](http://www.
 Change log / differences from original script
 ----------------------------------------
 - **Fixed:** Added Sustain pedal support (the glaring bug that got me looking into customizing the script)
+- **Added:** <kbd>SHIFT</kbd> + <kbd>REWIND</kbd> Undo
+- **Added:** <kbd>SHIFT</kbd> + <kbd>FAST FORWARD</kbd> Redo
 - **Added:** <kbd>LOOP</kbd> toggle loop mode
 - **Added:** <kbd>SHIFT</kbd> + <kbd>PLAY</kbd> toggles metronome
 - **Added:** <kbd>SHIFT</kbd> + <kbd>REC</kbd> toggles clip launcher overdub mode
